@@ -1,0 +1,85 @@
+2026-04-06 16:39:19,737 - INFO - ==================================================
+2026-04-06 16:39:19,737 - INFO - Starting Weekly Analyzer
+2026-04-06 16:39:19,737 - INFO - Analyzing SPY...
+2026-04-06 16:39:20,277 - WARNING - Attempt 1 failed for SPY: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/download/SPY?period1=1712407159&period2=1775479159&interval=1d&events=history
+2026-04-06 16:39:21,810 - WARNING - Attempt 2 failed for SPY: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/download/SPY?period1=1712407161&period2=1775479161&interval=1d&events=history
+2026-04-06 16:39:24,345 - WARNING - Attempt 3 failed for SPY: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/download/SPY?period1=1712407163&period2=1775479163&interval=1d&events=history
+2026-04-06 16:39:24,345 - ERROR - Failed to fetch SPY after 3 attempts
+2026-04-06 16:39:25,346 - INFO - Analyzing QQQ...
+2026-04-06 16:39:25,869 - WARNING - Attempt 1 failed for QQQ: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/download/QQQ?period1=1712407165&period2=1775479165&interval=1d&events=history
+2026-04-06 16:39:27,397 - WARNING - Attempt 2 failed for QQQ: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/download/QQQ?period1=1712407166&period2=1775479166&interval=1d&events=history
+2026-04-06 16:39:29,907 - WARNING - Attempt 3 failed for QQQ: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/download/QQQ?period1=1712407169&period2=1775479169&interval=1d&events=history
+2026-04-06 16:39:29,908 - ERROR - Failed to fetch QQQ after 3 attempts
+2026-04-06 16:39:30,908 - INFO - Analyzing VTI...
+2026-04-06 16:39:31,418 - WARNING - Attempt 1 failed for VTI: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/download/VTI?period1=1712407170&period2=1775479170&interval=1d&events=history
+2026-04-06 16:39:32,941 - WARNING - Attempt 2 failed for VTI: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/download/VTI?period1=1712407172&period2=1775479172&interval=1d&events=history
+2026-04-06 16:39:35,517 - WARNING - Attempt 3 failed for VTI: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/download/VTI?period1=1712407174&period2=1775479174&interval=1d&events=history
+2026-04-06 16:39:35,517 - ERROR - Failed to fetch VTI after 3 attempts
+2026-04-06 16:39:36,517 - INFO - Analyzing VXUS...
+2026-04-06 16:39:37,035 - WARNING - Attempt 1 failed for VXUS: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/download/VXUS?period1=1712407176&period2=1775479176&interval=1d&events=history
+2026-04-06 16:39:38,580 - WARNING - Attempt 2 failed for VXUS: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/download/VXUS?period1=1712407178&period2=1775479178&interval=1d&events=history
+2026-04-06 16:39:41,070 - WARNING - Attempt 3 failed for VXUS: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/download/VXUS?period1=1712407180&period2=1775479180&interval=1d&events=history
+2026-04-06 16:39:41,070 - ERROR - Failed to fetch VXUS after 3 attempts
+2026-04-06 16:39:42,071 - INFO - Analyzing BND...
+2026-04-06 16:39:42,582 - WARNING - Attempt 1 failed for BND: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/download/BND?period1=1712407182&period2=1775479182&interval=1d&events=history
+2026-04-06 16:39:44,094 - WARNING - Attempt 2 failed for BND: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/download/BND?period1=1712407183&period2=1775479183&interval=1d&events=history
+2026-04-06 16:39:46,675 - WARNING - Attempt 3 failed for BND: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/download/BND?period1=1712407186&period2=1775479186&interval=1d&events=history
+2026-04-06 16:39:46,676 - ERROR - Failed to fetch BND after 3 attempts
+2026-04-06 16:39:53,985 - INFO - Telegram report sent successfully
+2026-04-06 16:39:53,986 - INFO - State saved to /home/johan/.openclaw/workspace/ig-trading-bot/data/bot_state.json
+2026-04-06 16:39:53,986 - INFO - Weekly analysis complete
+2026-04-06 16:39:53,986 - INFO - ==================================================
+2026-04-06 16:41:06,267 - INFO - ==================================================
+2026-04-06 16:41:06,267 - INFO - Starting Weekly Analyzer
+2026-04-06 16:41:06,267 - INFO - Analyzing SPY...
+2026-04-06 16:41:08,306 - INFO - Fetched 502 days of data for SPY
+2026-04-06 16:41:09,307 - INFO - Analyzing QQQ...
+2026-04-06 16:41:09,859 - INFO - Fetched 502 days of data for QQQ
+2026-04-06 16:41:10,860 - INFO - Analyzing VTI...
+2026-04-06 16:41:11,433 - INFO - Fetched 502 days of data for VTI
+2026-04-06 16:41:12,433 - INFO - Analyzing VXUS...
+2026-04-06 16:41:12,947 - INFO - Fetched 502 days of data for VXUS
+2026-04-06 16:41:13,948 - INFO - Analyzing BND...
+2026-04-06 16:41:14,535 - INFO - Fetched 502 days of data for BND
+2026-04-06 16:41:15,536 - ERROR - Failed to send Telegram message: name 'requests' is not defined
+2026-04-06 16:41:15,536 - INFO - State saved to /home/johan/.openclaw/workspace/ig-trading-bot/data/bot_state.json
+2026-04-06 16:41:15,537 - INFO - Weekly analysis complete
+2026-04-06 16:41:15,537 - INFO - ==================================================
+2026-04-06 16:41:36,081 - INFO - ==================================================
+2026-04-06 16:41:36,081 - INFO - Starting Weekly Analyzer
+2026-04-06 16:41:36,081 - INFO - Analyzing SPY...
+2026-04-06 16:41:37,255 - INFO - Fetched 502 days of data for SPY
+2026-04-06 16:41:38,256 - INFO - Analyzing QQQ...
+2026-04-06 16:41:38,636 - INFO - Fetched 502 days of data for QQQ
+2026-04-06 16:41:39,637 - INFO - Analyzing VTI...
+2026-04-06 16:41:40,037 - INFO - Fetched 502 days of data for VTI
+2026-04-06 16:41:41,038 - INFO - Analyzing VXUS...
+2026-04-06 16:41:41,408 - INFO - Fetched 502 days of data for VXUS
+2026-04-06 16:41:42,409 - INFO - Analyzing BND...
+2026-04-06 16:41:42,750 - INFO - Fetched 502 days of data for BND
+2026-04-06 16:41:44,223 - INFO - Telegram report sent successfully
+2026-04-06 16:41:44,223 - INFO - State saved to /home/johan/.openclaw/workspace/ig-trading-bot/data/bot_state.json
+2026-04-06 16:41:44,223 - INFO - Weekly analysis complete
+2026-04-06 16:41:44,223 - INFO - ==================================================
+INFO:root:Starting IG Trading Bot
+ERROR:root:An error occurred: name 'IGClient' is not defined
+INFO:root:Starting IG Trading Bot
+ERROR:root:An error occurred: name 'IGClient' is not defined
+2026-04-06 16:45:32,667 - INFO - ==================================================
+2026-04-06 16:45:32,667 - INFO - Starting Weekly Analyzer
+2026-04-06 16:45:32,667 - INFO - Analyzing SPY...
+2026-04-06 16:45:33,788 - INFO - Fetched 502 days of data for SPY
+2026-04-06 16:45:34,788 - INFO - Analyzing QQQ...
+2026-04-06 16:45:35,130 - INFO - Fetched 502 days of data for QQQ
+2026-04-06 16:45:36,131 - INFO - Analyzing VTI...
+2026-04-06 16:45:36,780 - INFO - Fetched 502 days of data for VTI
+2026-04-06 16:45:37,781 - INFO - Analyzing VXUS...
+2026-04-06 16:45:38,094 - INFO - Fetched 502 days of data for VXUS
+2026-04-06 16:45:39,095 - INFO - Analyzing BND...
+2026-04-06 16:45:39,428 - INFO - Fetched 502 days of data for BND
+2026-04-06 16:45:40,885 - INFO - Telegram report sent successfully
+2026-04-06 16:45:40,886 - INFO - State saved to /home/johan/.openclaw/workspace/ig-trading-bot/data/bot_state.json
+2026-04-06 16:45:40,886 - INFO - Weekly analysis complete
+2026-04-06 16:45:40,886 - INFO - ==================================================
+INFO:root:Starting IG Trading Bot
+ERROR:root:An error occurred: name 'IGClient' is not defined

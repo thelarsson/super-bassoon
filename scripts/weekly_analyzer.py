@@ -5,11 +5,11 @@ Long-term ETF analysis with trend and risk assessment
 Runs every Friday at 17:00 UAE time
 """
 
-import requests
 import pandas as pd
 import json
 import logging
 import sys
+import requests
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Dict, Optional, Tuple
@@ -21,6 +21,12 @@ from config import (
     TG_BOT_TOKEN, TG_CHAT_ID, EMA_SHORT_PERIOD, EMA_LONG_PERIOD,
     STATE_FILE, LOG_FILE, DEFAULT_ASSETS, IG_BASE_URL
 )
+
+# Import yfinance
+try:
+    import yfinance as yf
+except ImportError:
+    raise ImportError("yfinance is required. Install with: pip install yfinance")
 
 
 class WeeklyAnalyzer:
@@ -54,29 +60,20 @@ class WeeklyAnalyzer:
         
     def fetch_yahoo_data(self, symbol: str, max_retries: int = 3) -> Optional[pd.DataFrame]:
         """
-        Fetch historical data from Yahoo Finance
+        Fetch historical data from Yahoo Finance using yfinance
         Returns DataFrame with Close prices or None on failure
         """
         for attempt in range(max_retries):
             try:
-                # Calculate date range (2 years of data)
-                end_date = int(datetime.now().timestamp())
-                start_date = end_date - (2 * 365 * 24 * 3600)  # 2 years ago
+                # Use yfinance instead of direct HTTP requests
+                ticker = yf.Ticker(symbol)
+                df = ticker.history(period="2y")
                 
-                url = f"https://query1.finance.yahoo.com/v7/finance/download/{symbol}"
-                params = {
-                    'period1': start_date,
-                    'period2': end_date,
-                    'interval': '1d',
-                    'events': 'history'
-                }
-                headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+                if df.empty:
+                    raise ValueError(f"No data returned for {symbol}")
                 
-                response = requests.get(url, params=params, headers=headers, timeout=30)
-                response.raise_for_status()
-                
-                # Parse CSV to DataFrame
-                df = pd.read_csv(pd.io.common.StringIO(response.text))
+                # Standardize columns
+                df = df.reset_index()
                 df['Date'] = pd.to_datetime(df['Date'])
                 df = df.sort_values('Date')
                 
@@ -86,7 +83,7 @@ class WeeklyAnalyzer:
             except Exception as e:
                 self.logger.warning(f"Attempt {attempt + 1} failed for {symbol}: {e}")
                 if attempt < max_retries - 1:
-                    time.sleep(min(2 ** attempt, 60))  # Exponential backoff, max 60s
+                    time.sleep(min(2 ** attempt, 60))
                 else:
                     self.logger.error(f"Failed to fetch {symbol} after {max_retries} attempts")
                     return None

@@ -1,0 +1,89 @@
+{
+  "metadata": {
+    "etf_list": [
+      "SPY",
+      "QQQ",
+      "VTI"
+    ],
+    "weights": [
+      0.4,
+      0.3,
+      0.3
+    ],
+    "start_date": "2020-01-01",
+    "end_date": "2024-01-01",
+    "generated_at": "2026-04-06T16:45:43.908648"
+  },
+  "results": {
+    "dca": {
+      "strategy": "DCA",
+      "monthly_amount": 500,
+      "total_invested": 24000.0,
+      "final_value": 31082.24,
+      "profit_loss": 7082.24,
+      "roi_percent": 29.51,
+      "num_months": 48,
+      "by_etf": {
+        "SPY": {
+          "units": 26.39862663915786,
+          "final_value": 12211.475550645746,
+          "invested": 9600.0
+        },
+        "QQQ": {
+          "units": 24.352239115751452,
+          "final_value": 9851.367325753625,
+          "invested": 7200.0
+        },
+        "VTI": {
+          "units": 39.12445591572802,
+          "final_value": 9019.397190994456,
+          "invested": 7200.0
+        }
+      }
+    },
+    "lump_sum": {
+      "strategy": "Lump Sum",
+      "total_amount": 24000,
+      "final_value": 39921.84,
+      "profit_loss": 15921.84,
+      "roi_percent": 66.34,
+      "by_etf": {
+        "SPY": {
+          "units": 32.30307075179227,
+          "invested": 9600.0,
+          "final_value": 14942.753048795528,
+          "first_price": 296.88818359375,
+          "final_price": 462.5799560546875
+        },
+        "QQQ": {
+          "units": 34.52804814894953,
+          "invested": 7200.0,
+          "final_value": 13967.852555151503,
+          "first_price": 208.31759643554688,
+          "final_price": 404.5364074707031
+        },
+        "VTI": {
+          "units": 47.764690346997405,
+          "invested": 7200.0,
+          "final_value": 11011.238466098219,
+          "first_price": 150.58822631835938,
+          "final_price": 230.5309295654297
+        }
+      }
+    },
+    "comparison": {
+      "dca": {
+        "total_invested": 24000.0,
+        "final_value": 31082.24,
+        "roi": 29.51
+      },
+      "lump_sum": {
+        "total_invested": 24000,
+        "final_value": 39921.84,
+        "roi": 66.34
+      },
+      "winner": "Lump Sum",
+      "value_difference": 8839.6
+    }
+  }
+}

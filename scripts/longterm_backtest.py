@@ -83,17 +83,42 @@ class LongTermBacktest:
                     if df.empty:
                         raise ValueError(f"No data returned for {etf}")
                     
-                    # Handle MultiIndex columns
+                    # Handle MultiIndex columns (yfinance sometimes returns MultiIndex)
                     if isinstance(df.columns, pd.MultiIndex):
                         df = df.xs(etf, level=1, axis=1)
                     
-                    # Standardize columns
-                    required_cols = ['Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume']
-                    for col in required_cols:
-                        if col not in df.columns:
-                            raise ValueError(f"Missing column {col} for {etf}")
+                    # Handle different column naming (yfinance changed format)
+                    # Flatten MultiIndex if present
+                    if isinstance(df.columns, pd.MultiIndex):
+                        df.columns = df.columns.droplevel(1)
                     
-                    df = df[required_cols]
+                    # Rename columns to standard format
+                    col_map = {}
+                    for col in df.columns:
+                        if 'Adj Close' in str(col) or 'adj close' in str(col).lower():
+                            col_map[col] = 'Adj Close'
+                        elif 'Close' in str(col):
+                            col_map[col] = 'Close'
+                        elif 'Open' in str(col):
+                            col_map[col] = 'Open'
+                        elif 'High' in str(col):
+                            col_map[col] = 'High'
+                        elif 'Low' in str(col):
+                            col_map[col] = 'Low'
+                        elif 'Volume' in str(col):
+                            col_map[col] = 'Volume'
+                    
+                    if col_map:
+                        df = df.rename(columns=col_map)
+                    
+                    # If no Adj Close, use Close
+                    if 'Adj Close' not in df.columns and 'Close' in df.columns:
+                        df['Adj Close'] = df['Close']
+                    
+                    # Select only needed columns
+                    required_cols = ['Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume']
+                    available_cols = [col for col in required_cols if col in df.columns]
+                    df = df[available_cols]
                     df.index = pd.to_datetime(df.index)
                     
                     self.data[etf] = df
