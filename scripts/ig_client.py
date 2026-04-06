@@ -21,12 +21,21 @@ class IGClient:
         response = self.session.post(url, headers=self.headers, json=payload)
         if not response.ok:
             raise Exception(f"Authentication failed: {response.text}")
-        token = response.json().get('token')
-        self.headers['Authorization'] = f'Bearer {token}'
+        
+        # IG uses CST and X-SECURITY-TOKEN headers, not Bearer token
+        cst = response.headers.get('CST')
+        security_token = response.headers.get('X-SECURITY-TOKEN')
+        
+        if cst:
+            self.headers['CST'] = cst
+        if security_token:
+            self.headers['X-SECURITY-TOKEN'] = security_token
 
     def get_account_info(self):
-        url = f"{self.base_url}/accounts/{IG_ACCOUNT_ID}"
+        url = f"{self.base_url}/accounts"
         response = self.session.get(url, headers=self.headers)
+        if not response.ok:
+            raise Exception(f"Failed to get account info: {response.text}")
         return response.json()
 
     def get_positions(self):
