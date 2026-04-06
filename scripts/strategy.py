@@ -53,7 +53,7 @@ class Strategy:
     def get_assets_to_buy(self, n: int = MAX_POSITIONS) -> List[Dict]:
         """
         Get top N assets to buy based on discovery engine analysis.
-        Runs discovery if not already done.
+        Only selects assets where we can afford at least 1 share.
         
         Args:
             n: Number of assets to return
@@ -63,21 +63,34 @@ class Strategy:
         """
         logger.info("Getting assets to buy...")
         
+        total_amount = float(os.getenv('DCA_AMOUNT', DCA_AMOUNT))
+        max_per_asset = total_amount / n
+        
         # Get top assets from discovery
-        all_top = self.discovery.get_top_assets(n * 2)  # Get extra for filtering
+        all_candidates = self.discovery.candidates if self.discovery.candidates else self.discovery.discover_assets()
         
-        # Filter for BUY recommendation only
-        buy_assets = [a for a in all_top if a['recommendation'] == 'BUY']
+        # Filter for assets we can actually buy (price <= max_per_asset)
+        affordable = [a for a in all_candidates if a['price'] <= max_per_asset]
         
-        # If not enough BUY assets, take top ones anyway
+        logger.info(f"Found {len(affordable)} assets affordable (price <= ${max_per_asset:.2f})")
+        
+        if len(affordable) < n:
+            logger.warning(f"Only {len(affordable)} affordable assets found (price < ${max_per_asset:.2f})")
+            # Fall back to cheapest assets
+            affordable = sorted(all_candidates, key=lambda x: x['price'])[:n]
+        
+        # Prefer BUY recommendation
+        buy_assets = [a for a in affordable if a['recommendation'] == 'BUY']
+        
+        # If not enough BUY assets, take top affordable ones
         if len(buy_assets) < n:
-            logger.warning(f"Only {len(buy_assets)} BUY assets found. Using top assets.")
-            buy_assets = all_top[:n]
+            logger.warning(f"Only {len(buy_assets)} BUY assets found. Using top affordable.")
+            buy_assets = affordable[:n]
         else:
             buy_assets = buy_assets[:n]
         
         self.top_assets = buy_assets
-        logger.info(f"Selected {len(buy_assets)} assets for purchase")
+        logger.info(f"Selected {len(buy_assets)} affordable assets for purchase")
         return buy_assets
 
     def calculate_position_size(self, total_amount: float, num_assets: int) -> float:
