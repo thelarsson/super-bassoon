@@ -1,3 +1,13 @@
+⚠️ Legal Disclaimer
+
+The use of this software is entirely at your own risk. The developer shall not be held liable for any direct, indirect, incidental, or consequential losses arising from the use of this trading bot.
+
+This bot does not provide financial advice, and no guarantees are made regarding profitability, performance, or accuracy of its strategies or signals.
+
+By using this software, you agree that you are fully responsible for your trading decisions and any outcomes resulting from them.
+
+
+
 IG Trading Bot
 
 A professional trading bot for long-term growth with IG.com. Focuses on Dollar-Cost Averaging (DCA) and trend following with ETFs and blue-chip stocks.
