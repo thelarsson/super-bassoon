@@ -10,9 +10,14 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-# Telegram config
-TG_BOT_TOKEN = os.getenv('TG_BOT_TOKEN', '8721705544:AAEoqlEg87haCrpQi_m7fGBdFKUHwuZXIX4')
-TG_CHAT_ID = os.getenv('TG_CHAT_ID', '8780980931')
+# Telegram config - MUST be set via environment variables
+# DO NOT hardcode tokens here for security
+TG_BOT_TOKEN = os.getenv('TG_BOT_TOKEN')
+TG_CHAT_ID = os.getenv('TG_CHAT_ID')
+
+if not TG_BOT_TOKEN or not TG_CHAT_ID:
+    print("Error: TG_BOT_TOKEN and TG_CHAT_ID must be set via environment variables")
+    sys.exit(1)
 
 
 def get_binance_status():

@@ -1,70 +1,70 @@
 {
-  "last_analysis": "2026-04-06T16:49:53.419762",
+  "last_analysis": "2026-04-06T18:14:24.716124",
   "results": {
     "SPY": {
       "symbol": "SPY",
-      "price": 655.83,
+      "price": 657.71,
       "trend": "BULLISH \ud83d\udfe2",
-      "ema50": 668.33,
-      "ema200": 653.75,
-      "volatility": "16.7%",
+      "ema50": 667.92,
+      "ema200": 653.79,
+      "volatility": "16.69%",
       "52w_high": 695.94,
       "52w_low": 476.34,
-      "distance_from_high": "5.76%",
+      "distance_from_high": "5.49%",
       "recommendation": "BUY \u2705",
-      "timestamp": "2026-04-06T16:49:46.471113"
+      "timestamp": "2026-04-06T18:14:17.818026"
     },
     "QQQ": {
       "symbol": "QQQ",
-      "price": 584.98,
-      "trend": "BULLISH \ud83d\udfe2",
-      "ema50": 597.64,
-      "ema200": 585.73,
+      "price": 587.9,
+      "trend": "NEUTRAL \ud83d\udfe1",
+      "ema50": 597.26,
+      "ema200": 585.74,
       "volatility": "21.25%",
       "52w_high": 635.8,
       "52w_low": 400.45,
-      "distance_from_high": "7.99%",
-      "recommendation": "BUY \u2705",
-      "timestamp": "2026-04-06T16:49:47.864411"
+      "distance_from_high": "7.53%",
+      "recommendation": "HOLD \u23f8\ufe0f",
+      "timestamp": "2026-04-06T18:14:19.149026"
     },
     "VTI": {
       "symbol": "VTI",
-      "price": 323.76,
+      "price": 324.57,
       "trend": "BULLISH \ud83d\udfe2",
-      "ema50": 329.52,
-      "ema200": 322.15,
-      "volatility": "16.8%",
+      "ema50": 329.33,
+      "ema200": 322.17,
+      "volatility": "16.79%",
       "52w_high": 343.34,
       "52w_low": 233.66,
-      "distance_from_high": "5.7%",
+      "distance_from_high": "5.47%",
       "recommendation": "BUY \u2705",
-      "timestamp": "2026-04-06T16:49:49.221865"
+      "timestamp": "2026-04-06T18:14:20.481349"
     },
     "VXUS": {
       "symbol": "VXUS",
-      "price": 77.48,
+      "price": 77.79,
       "trend": "BULLISH \ud83d\udfe2",
-      "ema50": 78.16,
-      "ema200": 73.8,
-      "volatility": "15.44%",
+      "ema50": 78.15,
+      "ema200": 73.84,
+      "volatility": "15.46%",
       "52w_high": 84.19,
       "52w_low": 53.28,
-      "distance_from_high": "7.97%",
+      "distance_from_high": "7.61%",
       "recommendation": "BUY \u2705",
-      "timestamp": "2026-04-06T16:49:50.552022"
+      "timestamp": "2026-04-06T18:14:21.879256"
     },
     "BND": {
       "symbol": "BND",
-      "price": 73.58,
+      "price": 73.47,
       "trend": "NEUTRAL \ud83d\udfe1",
-      "ema50": 73.6,
-      "ema200": 72.73,
+      "ema50": 73.59,
+      "ema200": 72.74,
       "volatility": "4.76%",
       "52w_high": 74.75,
       "52w_low": 68.67,
-      "distance_from_high": "1.56%",
+      "distance_from_high": "1.7%",
       "recommendation": "HOLD \u23f8\ufe0f",
-      "timestamp": "2026-04-06T16:49:51.898795"
+      "timestamp": "2026-04-06T18:14:23.268174"
     }
   }
 }
